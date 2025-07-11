@@ -1,14 +1,6 @@
-"""
-Name
-Disease
-Age
-Consultant
-Date
-Time
-Appointment number
-"""
 
 Name=['Abu']
+Phone_Number=["03090321073"]
 Disease=['Animakar']
 Age=['12']
 Consultant=['Ahmed']
@@ -26,11 +18,11 @@ while True:
     choice=int(input("Enter the number: "))
 
     if choice==1:
-     print("="*20)
-     print("{:<15}{:<15}{:<6}{:<15}{:<15}{:<15}{:<26}{:<16}".format("Name","Disease","Age","Consultant","Date","Time","Appointment_number","Fees"))   
-     print("="*20)
+     print("="*130)
+     print("{:<15}{:<15}{:<15}{:<6}{:<15}{:<15}{:<15}{:<26}{:<16}".format("Name","Phone_Number","Disease","Age","Consultant","Date","Time","Appointment_number","Fees"))   
+     print("="*130)
      for i in range(len(Name)):
-        print("{:<15}{:<15}{:<6}{:<15}{:<15}{:<15}{:<26}{:<16}".format(Name[i],Disease[i],Age[i],Consultant[i],Date[i],Time[i],Appointment_number[i],Fees[i]))
+        print("{:<15}{:15}{:<15}{:<6}{:<15}{:<15}{:<15}{:<26}{:<16}".format(Name[i],Phone_Number[i],Disease[i],Age[i],Consultant[i],Date[i],Time[i],Appointment_number[i],Fees[i]))
     elif choice==2:
        while True:
           print("1-Enter the Data: ")
@@ -38,6 +30,7 @@ while True:
           ch=int(input("Enter the number: "))
           if ch==1:
             Name.append(input("Enter a Name: "))
+            Phone_Number.append(input("Enter the number: "))
             Disease.append(input("Enter the Disease: "))
             Age.append(input("Enter a Age: "))
             Consultant.append(input("Enter the Doctor Name: "))
@@ -54,10 +47,10 @@ while True:
             choice=int(input("Enter the Number: "))
             if choice==1:
                name = input("Enter the name: ")
-               disease = input("Enter the Disease name : ")
+               phone_Number = input("Enter the Phone_Number : ")
                index=-1
                for i in range(len(Name)):
-                if Name[i]==name and Disease[i]==disease:
+                if Name[i]==name and Phone_Number[i]==phone_Number:
                   index=i
                   break
                if index==-1:
@@ -66,33 +59,36 @@ while True:
                   while True:
                      print("\nWhat do you want to update?")
                      print("1- Name")
-                     print("2- Disease")
-                     print("3- Age")
-                     print("4- Doctor")
-                     print("5- Date")
-                     print("6-Time")
-                     print("7-Appointment_Number")
-                     print("8-Fees")
-                     print("9-All")
-                     print("10-Exit")
+                     print("2-Phone_Number: ")
+                     print("3- Disease")
+                     print("4- Age")
+                     print("5- Doctor")
+                     print("6- Date")
+                     print("7-Time")
+                     print("8-Appointment_Number")
+                     print("9-Fees")
+                     print("10-All")
+                     print("11-Exit")
                      choice = int(input("Enter your choice: "))
                      if choice==1:
                         Name[index]=input("Enter the name: ")
                      elif choice==2:
-                        Disease[index]=input("Enter the Disease: ")
+                        phone_Number[index]=input("Enter the Phone Number: ")   
                      elif choice==3:
-                        Age[index]=input("Enter the Age: ")
+                        Disease[index]=input("Enter the Disease: ")
                      elif choice==4:
-                        Consultant[index]=input("Enter the Doctor Name: ")
+                        Age[index]=input("Enter the Age: ")
                      elif choice==5:
-                        Date[index]=input("Enter the Date: ")
+                        Consultant[index]=input("Enter the Doctor Name: ")
                      elif choice==6:
-                        Time[index]=input("Enter the time: ")
+                        Date[index]=input("Enter the Date: ")
                      elif choice==7:
-                        Appointment_number[index]=input("Enter the Appointment_number: ")
+                        Time[index]=input("Enter the time: ")
                      elif choice==8:
-                        Fees[index]= input("Enter the Fees")  
+                        Appointment_number[index]=input("Enter the Appointment_number: ")
                      elif choice==9:
+                        Fees[index]= input("Enter the Fees")  
+                     elif choice==10:
                         Name[index]=input("Enter the name: ")
                         Disease[index]=input("Enter the Disease: ")
                         Age[index]=input("Enter the Age: ")
@@ -101,7 +97,7 @@ while True:
                         Time[index]=input("Enter the time: ")
                         Fees[index]= input("Enter the Fees")
                         Appointment_number[index]=input("Enter the Appointment_number: ")
-                     elif choice==10:
+                     elif choice==11:
                        break
             elif choice==2:
                break
@@ -112,12 +108,12 @@ while True:
              choice =int(input("Enter the number: "))
              if choice==1:
                search_name=input("Enter the name to search: ")
-               disease = input("Enter the Disease name : ")
+               Phone_Number = input("Enter the Phone Number : ")
                found = False
                print("\nSearch Result: ")
                for i in range(len(Name)):
-                  if Name[i]==search_name and Disease[i]==disease:
-                   print(Name[i], "\t", Disease[i], "\t",Age[i], "\t", Consultant[i],"\t",Date[i],"\t",Time[i],"\t",Appointment_number[i],Fees[i])
+                  if Name[i]==search_name and Phone_Number[i]==phone_Number:
+                   print(Name[i],"\t",Phone_Number[i], "\t", Disease[i], "\t",Age[i], "\t", Consultant[i],"\t",Date[i],"\t",Time[i],"\t",Appointment_number[i],Fees[i])
                   found=True
                if not found:
                 print("No student found that name")
@@ -130,16 +126,17 @@ while True:
             choice =int(input("Enter the number: "))
             if choice==1:
               delete = input("Enter the name of student to delete: ")
-              disease = input("Enter the Disease name : ")
+              Phone_Number = input("Enter the Phone Number : ")
               del_index=-1
               for i in range(len(Name)):
-               if Name[i]==delete and Disease[i]==disease:
+               if Name[i]==delete and Phone_Number[i]==phone_Number:
                    del_index=i
                    break
               if del_index==-1:
                    print(delete,"not found")
               else:
                 del Name[del_index]
+                del Phone_Number[del_index]
                 del Disease[del_index]
                 del Age[del_index]
                 del Consultant[del_index]
